@@ -1,0 +1,26 @@
+// Main SCSS File
+
+// Setup
+@import 'setup/mixin';
+@import 'setup/reset';
+@import 'setup/bootstrap';
+@import 'setup/skeleton';
+@import 'partials/typography';
+
+// Elements
+@import 'partials/nav';
+@import 'partials/header';
+@import 'partials/forms';
+@import 'partials/footer';
+@import 'partials/elements';
+@import 'partials/loggedIn';
+
+// Pages
+@import 'pages/page';
+@import 'pages/home';
+@import 'pages/destinations';
+@import 'pages/dashboard';
+@import 'pages/trip';
+@import 'pages/form';
+@import 'pages/points';
+

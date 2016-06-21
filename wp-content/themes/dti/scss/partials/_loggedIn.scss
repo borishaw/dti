@@ -1,0 +1,82 @@
+// Logged In Styles
+
+// Help Modal
+#modal-help {
+	background: transparent;
+	overflow-y: scroll;
+	.md-content {
+		background: $c-white;
+		color: $c-grey-dark;
+		top: 30px;
+		padding: 50px 30px 30px;
+		margin-bottom: 20px;
+	}
+	h2 {
+		color: $c-grey-dark;
+	}
+	&.md-show {
+		.md-content {
+			@include transform(scale(1) translateX(-50%));
+		}
+	}
+	.md-close {
+		padding-top: 0;
+		border-color: $c-grey-dark;
+		background-color: rgba($c-white,0.6);
+		&:hover {
+			background-color: rgba($c-white,1);
+		}
+	}
+}
+
+
+body.admin-bar #modal-help .md-content {
+	top: 70px;
+}
+
+body.modal-open {
+	overflow: hidden;
+}
+
+#modal-help ~ .md-overlay {
+	background: rgba($c-black, 0.7);
+}
+
+
+// RESPONSIVE
+
+@media screen and (max-width:$breakpoint-xs) {
+	
+	#modal-help .md-content {
+		position: static;
+		padding: 70px 20px 20px;
+		margin-bottom: 0;
+		.md-close {
+			top: 20px;
+			margin-left: -20px;
+			width: 40px;
+			height: 40px;
+			font-size: 18px;
+			font-size: 1.8rem;
+			line-height: 39px;
+			background: transparent;
+		}
+		h2 {
+			padding: 0;
+		}
+	}
+	
+	#modal-help.md-effect-12 {
+		overflow-y: scroll;
+		.md-content {
+			@include transform(none);
+		}
+	}
+	
+	#modal-help.md-show.md-effect-12 {
+		.md-content {
+			@include transform(none);
+		}
+	} 
+	
+}

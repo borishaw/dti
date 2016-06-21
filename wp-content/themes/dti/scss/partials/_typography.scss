@@ -1,0 +1,234 @@
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+html {
+	font-size: 62.5%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $c-grey-dark;
+	font-family: $font-sans;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 22px;
+	line-height: 2.2rem;
+	
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-weight: 400;
+}
+
+h1 {
+	font: {
+		family: $font-script;
+		size: 75px;
+		size: 7.5rem;
+	}
+	line-height: 75px;
+	line-height: 7.5rem;
+	color: $c-grey-dark;
+	text-align: center;
+	text-shadow: 3px 2px 0 rgba(74, 74, 74, 0.4);
+}
+
+h2 {
+	font: {
+		size: 32px;
+		size: 3.2rem;
+		weight: 200;
+	}
+	line-height: 42px;
+	line-height: 4.2rem;
+	color: $c-brown;
+	text-align: center;
+	&.script {
+		font-family: $font-script;
+		color: $c-grey-dark;
+		font-size: 42px;
+		font-size: 4.2rem;
+	}
+	margin: 0 0 15px;
+	padding: 30px 0 0;
+}
+
+h3 {
+	font: {
+		size: 18px;
+		size: 1.8rem;
+	}
+	color: $c-red;
+	line-height: 24px;
+	line-height: 2.4rem;
+}
+
+.subtext {
+	font: {
+		size: 16px;
+		size: 1.6rem;
+	}
+	color: $c-grey-dark;
+	text-align: center;
+	max-width: 450px;
+	margin: 0 auto;
+	line-height: 24px;
+	margin-bottom: 40px;
+}
+
+
+p {
+	margin-bottom: 1.5em;
+	line-height: 25px;
+	line-height: 2.5rem;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: $c-red;
+	@include transition(0.2s);
+	text-decoration: none;	
+}
+
+a:visited {
+	color: $c-red;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: $c-brown;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+.wpb_text_column,
+.uavc-list-icon {
+	a {
+		border-bottom: 1px dotted transparent;
+		&:hover, &:focus, &:active {
+			border-bottom-color: $c-brown;
+		}
+	}
+}
+
+// RESPONSIVE
+
+
+@media screen and (max-width:$breakpoint-sm) {
+	
+	h1 {
+		font-size: 65px;
+		font-size: 6.5rem;
+		line-height: 65px;
+		line-height: 6.5rem;
+	}
+	
+}
+
+@media screen and (max-width:$breakpoint-xs) {
+	
+	body {
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+	
+	h1 {
+		font-size: 55px;
+		font-size: 5.5rem;
+		line-height: 55px;
+		line-height: 5.5rem;
+	}
+	
+	h2 {
+		font-size: 24px;
+		font-size: 2.4rem;
+		margin: 0 0 10px;
+		line-height: 28px;
+		line-height: 2.8rem;
+		padding: 20px 0 10px;
+		&.script {
+			font-size: 34px;
+			font-size: 3.4rem;
+		}
+	}
+	
+	p {
+		line-height: 21px;
+		line-height: 2.1rem;
+	}
+}

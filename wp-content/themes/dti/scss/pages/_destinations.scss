@@ -1,0 +1,23 @@
+// Destinations
+
+.destination-group {
+	padding: 0 0 40px;
+}
+
+.destination-featured > .grey-btn {
+	padding-top: 20px;
+}
+
+a.md-trigger {
+	cursor: pointer;
+}
+
+.entry-content > ul {
+	margin: 0;
+	padding: 0;
+}
+
+@import 'destinationsPartial/destinationsBoxes';
+@import 'destinationsPartial/destinationsModal';
+
+

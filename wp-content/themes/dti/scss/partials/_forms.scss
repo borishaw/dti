@@ -1,0 +1,489 @@
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+
+
+select, input, textarea {
+	 -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+
+
+input {
+	@include transition(0.3s);
+	border: 1px solid $c-grey-light;
+	background: $c-white;
+	color: $c-black;
+	border-radius: 0;
+	padding: 10px 15px;
+	&[type='number'] {
+		max-width: 100px;
+	}
+	&[type='checkbox'] {
+		position: relative;
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+		vertical-align: sub;
+		border: 1px solid $c-grey-med;
+		background-color: transparent;
+		&:focus {
+			outline: none;
+		}
+		&:checked {
+			background-color: $c-grey-light;
+			border-color: $c-grey-light;
+			&:before {
+				content: '\f00c';
+				font-family: 'fontAwesome';
+				color: $c-red;
+				position: absolute;
+				left: -2px;
+				top: -4px;
+			}
+		}
+  }
+  &[type='radio'] {
+		position: relative;
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+		vertical-align: sub;
+		border-radius: 50%;
+		border: 1px solid $c-grey-med;
+		background-color: transparent;
+		&:focus {
+			outline: none;
+		}
+		&:checked {
+			background-color: $c-grey-med;
+		}
+  }
+}
+
+textarea {
+	@include transition(0.3s);
+	border: 1px solid $c-grey-light;
+	background: $c-white;
+	color: $c-black;
+	border-radius: 0;
+	padding: 10px;
+}
+
+textarea,
+input:not([type='checkbox']):not([type='radio']) {
+	&:focus {
+		outline: none;
+		border: 1px solid $c-red;
+	}
+}
+
+select {
+    @extend input;
+    padding: 10px 40px 10px 15px;
+}
+
+.frm_error {
+    color: $c-red;
+    font-weight: 700;
+    font-size: 12px;
+	 font-size: 1.2rem;
+    padding-top: 5px;
+    line-height: 15px;
+}
+
+.frm-show-form {
+	margin-bottom: 50px;
+}
+
+.frm_dynamic_select_container {
+	.frm_opt_container {	
+		display: inline-block;
+		position: relative;
+		&:after {
+			pointer-events: none;
+			position: absolute;
+			bottom: 0;
+			right: 15px;
+			color: $c-grey-dark;
+			line-height: 44px;
+			content: '\f0d7';
+			font-family: 'fontAwesome';
+		}
+	}
+}
+
+.select-container {
+	display: inline-block;
+	position: relative;
+	&:after {
+		pointer-events: none;
+		position: absolute;
+		bottom: 0;
+		right: 15px;
+		color: $c-grey-dark;
+		line-height: 43px;
+		content: '\f0d7';
+		font-family: 'fontAwesome';
+	}
+}
+
+.form-captcha {
+	margin-bottom: 15px;
+}
+
+label span.hide {
+	display: none;
+}
+
+h2.first-heading {
+	padding-top: 0;
+}
+
+.hide-title h3.frm_section_spacing {
+    display: none;
+}
+
+.frm_section_heading {
+	padding-bottom: 50px;
+	h3 {
+		text-align: center;
+	}
+	.frm_description {
+		@extend .subtext;
+		text-align: center;
+		font-style: italic;
+		text-indent: 10px;
+		color: $c-grey-med2;
+		margin-bottom: 10px;
+	}
+	&.first-heading {
+		h3 {
+			padding-top: 0;
+		}
+	}
+	
+	&.heading-h2 {
+		h3 {
+			@extend h2;
+			margin: 0;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+.field-hide {
+	display: none;
+}
+
+.form-field {
+	.align-center {
+		text-align: center;
+	}
+}
+
+$room-box-width: 450px;
+$room-box-padding: 80px;
+$repeater-width: 40px;
+
+.room-repeat {
+	.frm_repeat_inline {
+		position: relative;
+		background: $c-grey-lighter;
+		margin: 0 auto 30px;
+		padding: 20px;
+		max-width: $room-box-width;
+		width: 100%;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		.frm_form_field {
+			float: none;
+			display: inline-block;
+			width: 220px;
+			padding: 0 10px;
+			&:first-of-type {
+				width: 120px;
+			}
+		}
+	}
+	label {
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	select {
+		width: 100%;
+	}
+	.select-container:after {
+		right: 25px;
+	}
+	.frm_repeat_buttons {
+		text-align: right;
+		max-width: $repeater-width;
+		padding-right: 0 !important;
+		.frm_icon_font {
+			&:before {
+				border-radius: 50%;
+				border: 2px solid;
+				padding: 2px;
+			}
+		}
+	}
+	.frm_first_repeat {
+		&:not(:last-child) {
+			.frm_add_form_row {
+				// disable first add button
+				color: $c-grey-med2;
+				pointer-events: none;
+				&:focus { outline: none; }
+			}
+		}
+		+ .frm_repeat_inline .frm_add_form_row{
+			display:none; // hide second add button
+		 }
+	} 
+}
+
+
+
+// Occupant details
+
+h3.frm_trigger {
+	margin: 40px 0 0;
+	border-bottom: 1px solid $c-red;
+	padding-bottom: 5px;
+	position: relative;
+	cursor: pointer;
+	&:after {
+		content: '\f0d7';
+		font-family: 'fontAwesome';
+	}
+	&.active {
+		&:after {
+			content: '\f0d8';
+		}
+	}
+}
+
+.collapse-section {
+	padding-bottom: 0px;
+}
+
+.occupant-details,
+.contact-details,
+.travel-documents,
+.emergency-contact,
+.travel-air,
+.travel-insurance,
+body.signup {
+	select, input:not([type='checkbox']):not([type='radio']):not(.frm_other_input) {
+		width: 100%;
+	}
+	label {
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 18px;
+		display: block;
+	}
+	.frm_form_field {
+		margin-top: 20px;
+	}
+}
+
+.frm_inline {
+	label {
+		display: inline-block;
+	}
+	select, input:not([type='checkbox']):not([type='radio']):not(.frm_other_input) {
+		width: auto;
+	}
+}
+
+.diet-options {
+    padding: 20px;
+    margin: 10px 20px 0 !important;
+    background: #E1E1E1;
+	 label {
+		font-weight: 400;
+	 }
+	 .frm_other_input {
+		background: #fff;
+	 }
+	 .frm_checkbox {
+		margin-bottom: 5px;
+	 }
+	 input:not([type='checkbox']) {
+		margin-top: 10px;
+	 }
+}
+
+.form-clearfix {
+	clear: both;
+}
+
+
+.align-labels {
+	label {
+		width: 170px;
+	}
+	input[type='email'] {
+		width: 220px !important;
+	}
+}
+
+.travel-documents {
+	h3 {
+		margin-bottom: 5px;
+	}
+	.horizontal_radio {
+		text-align: center;
+		margin-top: 0;
+	}
+}
+
+.travel-address {
+	> .frm_form_field:first-of-type {
+		margin-top: 0;
+	}
+}
+
+
+div[id*="state_container"] {
+	// display: inline-block;
+	position: relative;
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: $c-grey-dark;
+		line-height: 42px;
+		content: '\f0d7';
+		font-family: 'fontAwesome';
+	}
+}
+
+.travel-air {
+	text-align: center;
+	label {
+		display: inline-block !important;
+	}
+	select {
+		width: auto !important;
+	}
+}
+
+.travel-insurance {
+	text-align: center;
+}
+
+.review-screen {
+	text-align: center;
+}
+
+.frm_submit {
+	text-align: center;
+	margin-top: 50px;
+	input {
+		@include transition(0.3s);
+		background: transparent;
+		font-size: 21px;
+		font-size: 2.1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding: 15px 20px;
+		&:hover {
+			background: $c-grey-light;
+			color: $c-red;
+		}
+	}
+}
+
+.g-recaptcha {
+	text-align: center;
+	> div > div {
+		display: inline-block;
+	}
+}
+
+.form-submission-message {
+	padding: 30px 0 50px;
+}
+
+// Other Form styling
+#form_helpcontact,
+#form_consultation,
+#form_contact-us {
+	margin-bottom: 0;
+	text-align: center;
+	
+	select, input:not([type='checkbox']):not([type='radio']):not(.frm_other_input) {
+		width: 100%;
+	}
+	.frm_form_field {
+		margin-top: 15px;
+	}
+	label {
+		font-weight: 400;
+	}
+	
+	.frm_section_heading {
+		h3 {
+			padding-top: 50px;
+		}
+	}
+	
+	.frm_inline select {
+		width: auto;
+	}
+	
+	
+}
+
+.day-selector {
+	select {
+		min-height: 125px;
+		overflow: hidden;
+	}
+}
+
+
+.contact-form-outer {
+	.vc_column-inner {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.contact-form {
+	// background: $c-grey-light;
+	.frm_form_field:first-of-type {
+		margin-top: 10px;
+	}
+	.frm_submit {
+		margin-top: 20px;
+	}
+}
+
+
+
+// RESPONSIVE
+
+@media screen and (max-width:$breakpoint-xs) {
+
+	.align-labels input[type='email'],
+	.align-labels select[type='email'],
+	input[type='tel'],
+	.frm_inline select,
+	.frm_inline input:not([type='checkbox']):not([type='radio']):not(.frm_other_input) {
+		width: 100% !important;
+	}
+	
+	.frm_section_heading .frm_description {
+		margin-bottom: 0;
+	}
+
+}

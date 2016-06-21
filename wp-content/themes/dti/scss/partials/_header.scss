@@ -1,0 +1,79 @@
+// Header
+
+.entry-header {
+	margin-bottom: 70px;
+	.vc_row {
+		position: relative;
+		left: 0px;
+		box-sizing: border-box;
+		width: 100%;
+		background: $c-red no-repeat center;
+		background-size: cover;
+	}
+	.triangle-seperator {
+		position: absolute;
+		bottom: -8px;
+		width: 100%;
+		svg {
+			width: 100%;
+			height: 30px;
+		}
+		polygon {
+			fill: $c-white;
+		}
+		.uvc-x-large-triangle {
+			// Override Ultimate settings for the header triangle effect
+			position: static;
+		}
+	}
+}
+
+h1.entry-title {
+	padding: 150px 0 100px;
+	margin: 0;
+	color: $c-white;
+	-webkit-font-smoothing: antialiased;
+	&.has-description {
+		padding-bottom: 30px;
+	}
+}
+
+.entry-description {
+	color: $c-white;
+	text-shadow: $text-shadow;
+	-webkit-font-smoothing: antialiased;
+	font: {
+		weight: 700;
+		size: 16px;
+		size: 1.6rem;
+	}
+	line-height: 25px;
+	line-height: 2.5rem;
+	width: 100%;
+	max-width: 550px;
+	margin: 0 auto;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+
+// RESPONSIVE
+
+@media screen and (max-width:$breakpoint-xs) {
+	
+	.entry-header {
+		margin-bottom: 30px;
+	}
+	
+	h1.entry-title {
+		padding: 110px 0 70px;
+		&.has-description {
+			padding-bottom: 10px;
+		}
+	}
+	
+	.entry-description {
+		padding-bottom: 50px;
+	}
+	
+}

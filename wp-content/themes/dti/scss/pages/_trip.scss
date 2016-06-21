@@ -1,0 +1,482 @@
+// Single Trip
+
+.trip-content {
+	background: $c-white;
+}
+
+.trip-slider {
+	@include transition(0.5s);
+	height: 200px;
+	width: 100%;
+	.item {
+		@include transition(0.5s);
+		height: 200px;
+		img {
+			width: 100%;
+		}
+	}
+	.owl-controls {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		margin-top: 0;
+		opacity: 0;
+		.owl-buttons {
+			@include transition(0.3s);
+			div {
+				background: transparent;
+				font: {
+					size: 24px;
+					size: 2.4rem;
+				}
+				opacity: 1;
+				-webkit-font-smoothing: antialiased;
+				&:before {
+					font-family: 'simple-line-icons';
+					color: $c-white;
+				}
+			}
+			.owl-prev {
+				float: left;
+				&:before {
+					content: "\e605";
+				}
+			}
+			.owl-next {
+				float: right;
+				&:before {
+					content: '\e606';
+				}
+			}
+		}
+	}
+}
+
+// Expand trip carousel when on 'about' tab
+.tab-about {
+	.trip-slider {
+		.owl-controls {
+			opacity: 1;
+		}
+		height: 500px;
+		.item {
+			height: 500px;
+		}
+	}
+}
+
+body.admin-bar {
+	.is-sticky .trip-sidebar {
+		padding-top: 36px;
+	}
+}
+
+.trip-title {
+	color: $c-white;
+	position: absolute;
+	-webkit-font-smoothing: antialiased;
+	bottom: 100%;
+	margin: 0;
+	text-shadow: $text-shadow;
+	font-size: 55px;
+	font-size: 5.5rem;
+	line-height: 55px;
+	line-height: 5.5rem;
+	padding: 0 20px 10px;
+}
+
+.trip-date {
+	background: $c-black;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	color: $c-white;
+	text-align: center;
+	font: {
+		weight: 700;
+		size: 13px;
+		size: 1.3rem;
+	}
+}
+
+.trip-nav-btn {
+	display: none;
+	width: 100%;
+	padding: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.sidebar-nav {
+	margin: 0;
+	padding: 10px 0 0 10px;
+	> li {
+		a {
+			color: $c-grey-med;
+			background: transparent;
+			text-indent: -20px;
+			cursor: pointer;
+			&:before {
+				@include transition(0.4s);
+				content: '\f0da';
+				font-family: 'fontAwesome';
+				padding-right: 5px;
+				color: $c-white;
+			}
+		}
+		a:hover {
+			color: $c-red;
+			background: transparent;
+			&:before {
+				color: $c-grey-med;
+			}
+		}
+		&.active {
+			a, a:focus, a:hover {
+				background-color: transparent;
+				color: $c-grey-med;
+				outline: none;
+				&:before {
+					color: $c-red;
+				}
+			}
+		}
+	}
+}
+
+
+.trip-timer {
+	margin-top: 20px;
+	text-align: center;
+	
+	h5 {
+		text-transform: uppercase;
+		font: {
+			weight: 700;
+			size: 13px;
+			size: 1.3rem;
+		}
+	}
+	
+	.ult_countdown {
+		float: none !important;
+		margin-bottom: 0 !important;
+	}
+	
+	.ult_countdown-section {
+		margin: 0 3px;
+		padding: 10px 5px !important;
+		width: auto;
+		height: auto;
+		border: 1px solid $c-grey-light;
+		color: $c-grey-dark;
+		.ult_countdown-amount {
+			// numbers
+			line-height: 20px !important;
+			font-size: 18px !important;
+			font-weight: 700;
+		}
+		.ult_countdown-period {
+			// words
+			display: block;
+			padding-top: 5px;
+			text-transform: uppercase;
+			color: $c-grey-med;
+			font-size: 12px !important;
+		}
+	}
+	
+}
+
+.reg-deadline {
+	font-size: 14px;
+	font-style: italic;
+}
+
+.about-highlight {
+	border: 1px solid $c-grey-light;
+	padding: 40px;
+	font: {
+		size: 18px;
+		size: 1.8rem;
+	}
+	text-align: center;
+	line-height: 25px;
+	line-height: 2.5rem;
+	color: $c-grey-dark;
+	background-color: $c-white;
+	margin: -75px 0 50px;
+	p {
+		margin: 0;
+	}
+}
+
+.col-main {
+	border-left: 1px solid $c-grey-light;
+	p {
+		line-height: 1.6em;
+	}
+	h2 {
+		text-align: left;
+	}
+	#about {
+		h2 {
+			text-align: center;
+		}
+	}
+	.tab-pane {
+		padding-bottom: 50px;
+	}
+	.ult-ib-effect-style2 {
+		pointer-events: none;
+		&:hover .ult-new-ib-title {
+			@include transform(translate3d(0,-50%,0));
+		}
+		.ult-new-ib-title {
+			font-weight: 700 !important;
+			text-shadow: $text-shadow;
+		}
+	}
+	ul{
+		margin: 0;
+		padding: 0 20px;
+		list-style: none;
+		li {
+			text-indent: -20px;
+			padding: 0 0 10px;
+			&:before {
+				content: '\f00c';
+				font-family: 'fontAwesome';
+				padding-right: 5px;
+			}
+		}
+	}
+}
+
+
+#about.tab-pane {
+	padding-top: 40px
+}
+
+.accommodation-item {
+	padding-bottom: 50px;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+h3.acc-dates {
+	margin: -20px 0 30px;
+}
+
+.accommodations-gallery {
+	// height: 300px;
+	.item {
+		// height: 300px;
+	}
+	&:first-child {
+		margin-top: 30px;
+	}
+	.owl-controls {
+		.owl-page {
+			span {
+				@include transition(0.2s);
+				width: 40px;
+				height: 5px;
+				border-radius: 0;
+				background-color: $c-grey-med2;
+				&:hover {
+					background-color: $c-grey-med;
+				}
+			}
+			&.active {
+				span {
+					background-color: $c-red;
+				}
+			}
+		}
+		.owl-buttons {
+			position: absolute;
+			top: 50%;
+			margin-top: -20px;
+			width: 100%;
+			@include transition(0.3s);
+			div {
+				background: transparent;
+				font: {
+					size: 24px;
+					size: 2.4rem;
+				}
+				opacity: 1;
+				-webkit-font-smoothing: antialiased;
+				&:before {
+					font-family: 'simple-line-icons';
+					color: $c-white;
+				}
+			}
+			.owl-prev {
+				float: left;
+				&:before {
+					content: "\e605";
+				}
+			}
+			.owl-next {
+				float: right;
+				&:before {
+					content: '\e606';
+				}
+			}
+		}
+		
+	}
+}
+
+// Registrations
+.no-registration-message {
+	text-align: center;
+	font-size: 21px;
+	padding: 100px 0;
+}
+
+.submit-btn {
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 21px;
+    font-size: 2.1rem;
+    background-color: transparent;
+    border: 1px solid $c-grey-light;
+    color: $c-black;
+	 &:hover {
+		color: $c-red !important;
+		background-color: $c-grey-light;
+	 }
+}
+
+.submit-btn-outer {
+	text-align: center;
+	padding-top: 100px;
+}
+
+
+
+// RESPONSIVE
+
+@media screen and (max-width:991px) {
+	
+	.tab-about {
+		.trip-slider {
+			height: 400px;
+			.item {
+				height: 400px;
+				img {
+					width: auto;
+					max-width: none;
+				}
+			}
+		}
+	}
+	
+	#sticky-wrapper.is-sticky {
+		.trip-sidebar {
+			position: static !important;
+		}
+	}
+	
+	#trip-nav {
+		display: none;
+	}
+	
+	.tab-content {
+		>.tab-pane {
+			display: block;
+			opacity: 1;
+			border-bottom: 1px solid $c-grey-light;
+			padding: 30px 0;
+		}
+	}
+	
+	#register-cta {
+		display: none;
+	}
+	
+	
+}
+
+
+@media screen and (max-width:$breakpoint-xs) {
+	
+	
+	
+	.col-sidebar {
+		padding: 0;
+		z-index: 5;
+		.vc_column-inner {
+			padding: 0;
+		}
+	}
+	
+	
+	
+	.trip-title {
+		left: 0;
+		right: 0;
+		font-size: 55px;
+		font-size: 5.5rem;
+		@include transition(0.2s);
+	}
+	
+	.trip-date {
+		@include transition(0.2s);
+	}
+	
+
+	
+	
+	.col-main {
+		padding: 0;
+
+	}
+	
+	#section-about {
+		.vc_column-inner {
+			padding: 0;
+		}
+	}
+	
+	.about-highlight {
+		margin: 20px 0;
+		padding: 20px;
+		font-size: 14px;
+		font-size: 1.4rem;
+		
+	}
+	
+	
+	
+	.col-main .ult-carousel-wrapper {
+		margin-bottom: 0;
+	}
+	
+	.col-main .ult-ib-effect-style2 .ult-new-ib-title {
+		font-size: 21px;
+		padding: 20px;
+	}
+	
+	
+	
+	.accommodations-gallery {
+		height: auto;
+		&:first-child {
+			margin-top: 0;
+		}
+		.item {
+			height: auto;
+		}
+	}
+	
+	.accommodation-item {
+		padding-bottom: 30px;
+	}
+	
+	
+}

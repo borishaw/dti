@@ -1,0 +1,26 @@
+// Footer
+
+footer {
+	width: 100%;
+	padding: 20px 10px;
+	background: $c-brown;
+	color: $c-white;
+	-webkit-font-smoothing: antialiased;
+	text-align:center;
+	font: {
+		size: 14px;
+		size: 1.4rem;
+	}
+	a {
+		color: $c-grey-med;
+		&:visited {
+			color: $c-grey-med;
+		}
+		&:hover {
+			color: $c-white;
+		}
+	}
+	.copyright {
+		margin-right: 5px;
+	}
+}

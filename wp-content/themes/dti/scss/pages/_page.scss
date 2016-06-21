@@ -1,0 +1,88 @@
+// General page styles
+
+.main-content {
+	padding: 0 100px;
+	h1 {
+		padding: 50px 0 20px;
+	}
+	h2 {
+		text-align: left;
+		padding: 30px 0 20px;
+	}
+	ul{
+		margin: 0;
+		padding: 0 20px;
+		list-style: none;
+		li {
+			text-indent: -20px;
+			padding: 0 0 10px;
+			&:before {
+				content: '\f00c';
+				font-family: 'fontAwesome';
+				color: $c-brown;
+				padding-right: 5px;
+			}
+		}
+	}
+}
+
+// About Us
+.vc_tta.vc_general .vc_tta-panel-title {
+	font-weight: 700;
+}
+
+.vc_tta.vc_tta-style-classic .vc_tta-panel-body {
+	p:first-child {
+		margin-top: 0;
+	}
+}
+
+// Get Started
+#form_consultation {
+	padding-top: 0;
+}
+
+// Contact Us
+body.contact-us {
+	.uavc-list-content {
+		padding-bottom: 15px;
+		span.uavc-list-desc {
+			border-left: 3px solid #332415;
+			padding-left: 10px;
+			font-weight: 200;
+			font-size: 24px;
+			font-size: 2.4rem;
+			line-height: 38px;
+			line-height: 3.8rem;
+		}
+	}
+	.aio-icon {
+		color: $c-brown;
+		padding-right: 5px;
+	}
+}
+
+
+
+// RESPONSIVE
+
+@media screen and (max-width:$breakpoint-sm) {
+	
+	.main-content {
+		padding: 0;
+		h1 {
+			padding: 20px 0 10px;
+		}
+		h2 {
+			padding: 20px 0 10px;
+		}
+	}
+	
+	body.contact-us .uavc-list-content span.uavc-list-desc {
+		font-size: 21px;
+		font-size: 2.1rem;
+		line-height: 35px;
+		line-height: 3.5rem;
+	}
+	
+}
